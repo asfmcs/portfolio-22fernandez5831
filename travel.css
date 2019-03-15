@@ -1,0 +1,44 @@
+<style>
+
+#trravelheading {
+  color: white;
+}
+
+.countries { color: white;
+text-align: center;
+}
+
+.pictures- {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#why-why {
+  text-align: center;
+  background-image: url("https://cdn.pixabay.com/photo/2016/04/15/04/02/water-1330252_960_720.jpg");
+}
+
+#why-whyy {
+  text-align: center;
+}
+
+#marginzz {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  margin-left: 8px;
+  text-align: center;
+}
+
+body {
+  letter-spacing: 1.5px;
+}
+
+#foood {
+  text-align:left;
+}
+
+#best-foods {
+  text-align: left;
+}
