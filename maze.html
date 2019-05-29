@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>Maze</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Maze</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+    drawMaze(Color.Black, getWidth(), getHeight());
+    
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawGhost(150,100, Color);
+    drawGhost(100,200, Color.cyan);
+    drawGhost(150,200, Color.red);
+    drawGhost(200,200, Color.orange);
+
+    var random = Randomizer.nextColor();
+    var random2 = Randomizer.nextColor();
+    var random3 = Randomizer.nextColor();
+    drawPacman(210,380,random, random2, random3);
+
+}
+
+function drawMaze(color,width,height){
+    var back = new Rectangle(width, height);
+    back.setColor(Color.black);
+    add(back);
+    var gate = new Line (150,165, 200, 165);
+    gate.setColor(Color.red);
+    gate.setLineWidth(20);
+    add(gate);
+    var wall = new Line(100, 250, 270, 250);
+    wall.setColor(Color.blue);
+    wall.setLineWidth(10);
+    add(wall);
+    var wall2 = new Line(100, 255, 100, 165);
+    wall2.setColor(Color.blue);
+    wall2.setLineWidth(10);
+    add(wall2);
+    var wall3 = new Line(270, 255, 270, 165);
+    wall3.setColor(Color.blue);
+    wall3.setLineWidth(10);
+    add(wall3);
+    var wall4 = new Line(95, 165, 275, 165);
+    wall4.setColor(Color.blue);
+    wall4.setLineWidth(10);
+    add(wall4);
+    var iwall = new Line(100, 250, 270, 250);
+    iwall.setColor(Color.black);
+    iwall.setLineWidth(5);
+    add(iwall);
+    var iwall2 = new Line(100, 253, 100, 165);
+    iwall2.setColor(Color.black);
+    iwall2.setLineWidth(5);
+    add(iwall2);
+    var iwall3 = new Line(270, 253, 270, 165);
+    iwall3.setColor(Color.black);
+    iwall3.setLineWidth(5);
+    add(iwall3);
+    var iwall4 = new Line(97, 165, 273, 165);
+    iwall4.setColor(Color.black);
+    iwall4.setLineWidth(5);
+    add(iwall4);
+}
+
+function drawGhost(centerX, centerY, color){
+    //TO DO
+    var rect = new Rectangle(35, 53/2);
+    rect.setPosition(centerX+15, centerY);
+    rect.setColor(color);
+    add(rect);
+    var head = new Circle(35/2);
+    head.setPosition(centerX+32.5, centerY);
+    head.setColor(color);
+    add(head);
+    var legone = new Circle(13.5/2);    
+    legone.setPosition(centerX+22, centerY+27);
+    legone.setColor(color);
+    add (legone);
+    var legtwo = new Circle(13/2);   
+    legtwo.setPosition(centerX+33, centerY+27);
+    legtwo.setColor(color);
+    add (legtwo);
+    var legthree = new Circle(13.5/2);    
+    legthree.setPosition(centerX+43, centerY+27);
+    legthree.setColor(color);
+    add (legthree);
+    var eyeleft = new Circle(10/2);
+    eyeleft.setPosition(centerX+27, centerY);
+    eyeleft.setColor(Color.white);
+    add(eyeleft);
+    var eyeright = new Circle(10/2);
+    eyeright.setPosition(centerX+40, centerY);
+    eyeright.setColor(Color.white);
+    add(eyeright);
+    var pupilone = new Circle(4.3/2);
+    pupilone.setPosition(centerX+29, centerY);
+    pupilone.setColor(Color.blue);
+    add(pupilone);
+    var pupiltwo = new Circle(4.3/2);
+    pupiltwo.setPosition(centerX+42, centerY);
+    pupiltwo.setColor(Color.blue);
+    add(pupiltwo);
+}
+
+function drawPacman(width,height,color, color2, color3){
+    var pacman = new Circle(25);
+    pacman.setPosition(width,height);
+    pacman.setColor(Color.yellow);
+    add(pacman);
+    var eye = new Circle(4);
+    eye.setPosition(width+5,height-12);
+    eye.setColor(Color.black);
+    add(eye);
+    var myArc = new Arc(26, -35, 35, 0);
+    myArc.setPosition(width, height);
+    myArc.setColor(Color.black);
+    add(myArc);
+    var food1 = new Circle(5);
+    food1.setPosition(width + 45,height);
+    food1.setColor(color);
+    add(food1);
+    var food2 = new Circle(5);
+    food2.setPosition(width + 75,height);
+    food2.setColor(color2);
+    add(food2);
+    var food3 = new Circle(5);
+    food3.setPosition(width + 105,height);
+    food3.setColor(color3);
+    add(food3);
+    var food3 = new Circle(5);
+    food3.setPosition(width + 105,height);
+    food3.setColor(color3);
+    add(food3);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

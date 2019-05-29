@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+        <!-- THIS IS WHERE YOUR CODE WILL GO -->
+        <a-sky src="https://codehs.com/uploads/b4cc1ff2d9a21e283f70af0e74cdd2e5"></a-sky>
+        
+        <a-box position="0 0 -5" depth="1" height="2" width="1" src="https://codehs.com/uploads/74098009da83f1598c7aec91a4b0ff6b">
+            <a-animation attribute="rotation" 
+            from="0 0 -5"
+            to="-5 360 -5"
+            dur="9000"
+            ></a-animation>
+        </a-box>
+        
+        <a-sphere
+        src="https://codehs.com/uploads/4e496fae1b914bf19dd28efc188738b7"
+        position="0 0 -10"
+        radius="5">
+            <a-animation attribute="rotation" 
+            from="0 0 -10"
+            to="0 360 -10"
+            dur="8000"
+            repeat="indefinite"
+            begin="click"></a-animation>
+        </a-sphere>
+        
+         <a-sphere
+        src="https://codehs.com/uploads/d61d0c0b8197c8377787e87e1b58d26b"
+        position="0 0 -10"
+        radius="2">
+            <a-animation attribute="rotation" 
+            from="0 0 -10"
+            to="0 360 -10"
+            dur="1000"
+            repeat="indefinite"
+            begin="click"></a-animation>
+        </a-sphere>
+        
+        <a-sphere position="-10 0 -5" radius="0.5" src="https://codehs.com/uploads/efba8e7d9c5e54be783906b8e455ea6d">
+            <a-animation
+                attribute="position"
+                from="-5 0 -5"
+                to="-5 3 -5"
+                dur="9000"
+                repeat="indefinite"
+                direction="alternate"
+                ></a-animation>
+            <a-animation
+                attribute="src"
+                from="src="https://codehs.com/uploads/efba8e7d9c5e54be783906b8e455ea6d""
+                to="src="https://codehs.com/uploads/09d29b4e26f2fd1721c04aaa763de32f"""
+                dur="2000"
+                begin="click"
+                ></a-animation>
+            </a-sphere>
+            
+           <a-sphere src="https://codehs.com/uploads/efba8e7d9c5e54be783906b8e455ea6d" 
+           position="0 0 -20" radius="1">
+                <a-animation
+                attribute="position"
+                from="0 0 -20"
+                to="0 360 20"
+                dur="9000"
+                repeat="indefinite"
+                ></a-animation>
+            </a-sphere>
+            
+            
+        <a-camera>
+	        <a-cursor fuse=“true” fuse-timeout=“1000”>
+	        </a-cursor>
+        </a-camera>
+        </a-scene>
+    </body>
+</html>

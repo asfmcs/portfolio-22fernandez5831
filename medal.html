@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Metal Design</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Metal Design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start () {
+    setBackgroundColor(Color.black);
+    var myblue = new Color(142, 194, 191);
+    var mypink = new Color(206, 94, 95);
+    var myyellow = new Color(236, 218, 92);
+    var myotheryellow = new Color(226, 179, 71);
+    var yellowagain = new Color (236, 208, 86);
+    
+    var pinkline = new Line (0,0,0,0);
+   pinkline.setPosition(30,30);
+   pinkline.setColor(mypink);
+   pinkline.setLineWidth(65);
+   pinkline.setPosition(200, -10);
+   pinkline.setEndpoint(160, 250);
+   add(pinkline);
+   
+   var blueline = new Line (0,0,0,0);
+   blueline.setPosition(30,30);
+   blueline.setColor(myblue);
+   blueline.setLineWidth(65);
+   blueline.setPosition(120, -10);
+   blueline.setEndpoint(160, 250);
+   add(blueline);
+   
+    var circle = new Circle(60);
+    circle.setPosition(160, 250);
+    circle.setColor(myyellow);
+    add(circle);
+    
+    var medalline = new Line (0,0,0,0);
+    medalline.setPosition(30,30);
+   medalline.setColor(myotheryellow);
+   medalline.setLineWidth(10);
+   medalline.setPosition(130, 200);
+   medalline.setEndpoint(215, 250);
+   add(medalline);
+   
+    var otherline = new Line (0,0,0,0);
+    otherline.setPosition(30,30);
+   otherline.setColor(yellowagain);
+   otherline.setLineWidth(10);
+   otherline.setPosition(110, 220);
+   otherline.setEndpoint(215, 260);
+   add(otherline);
+    
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

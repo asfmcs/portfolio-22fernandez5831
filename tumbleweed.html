@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <title>Sliding Around</title>
+    </head>
+    <body>
+        <a-scene>
+        
+            <!-- Set the Sky -->
+            <a-sky color="mediumseagreen"></a-sky>
+            
+            <!-- Set the camera and cursor -->
+            <a-camera>
+                <a-cursor fuse="true" fuse-timeout="1500"></a-cursor>
+            </a-camera>
+            <!-- Ground -->
+            <a-plane position="0 0 0" rotation="-90 0 0"
+                color="sienna" height="100" width="100">
+            </a-plane>
+            
+            <!-- Torus -->
+            <a-torus arc="360" radius-tubular="0.1"
+                radius="1" color="goldenrod"
+                position="16 1 -10">
+                
+                <a-animation
+                   attribute="position"
+                   from="16 1 -10"
+                   to="-20 1 -5"
+                   dur="5000"
+                   begin="click"
+                   direction="alternate"
+                ></a-animation>
+                    
+            </a-torus>
+            
+        </a-scene>
+    </body>
+</html>
